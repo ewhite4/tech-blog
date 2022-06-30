@@ -1,0 +1,30 @@
+<section>
+    <h2> Create Post </h2>
+
+    <form class="newPage">
+        <div>
+            <label for="post-title"> Title </label>
+        </div>
+        <div>
+            <label for="postUrl"> Link </label>
+            <input id="postUrl" name="postUrl">
+        </div>
+        <button type="submit" class="btn"> Create </button>
+    </form>
+</section>
+
+    {{#if posts.length}}
+    <section>
+        <h2> Your Posts </h2>
+        <ol>
+            {{#each posts as |post|}}
+            <li>
+                {{> post-info post}}
+                <a href="/dashboard/edit/{{post.id}}" class="editLink">Edit Post</a>
+            </li>
+            {{/each}}
+        </ol>
+    </section>
+    {{/if}}
+
+b 
